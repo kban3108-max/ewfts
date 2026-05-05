@@ -1,0 +1,34 @@
+# Maintainer: kban3108-max <https://github.com/kban3108-max>
+pkgname=ewfts
+pkgver=1.0
+pkgrel=1
+pkgdesc="Ephemeral Wrapper For Temporary Scripts"
+arch=('any')
+url="https://github.com/kban3108-max/ewfts"
+license=('MIT')
+depends=('python')
+provides=('ewfts')
+conflicts=()
+
+# We point to your local staging directory
+source=("ewfts.py"
+        "ewfts.1"
+        "ewfts")
+
+# Since these are local files managed by you, we skip the integrity checks
+md5sums=('SKIP'
+         'SKIP'
+         'SKIP')
+
+package() {
+    # 1. Install the executor-only Python script to a shared directory
+    install -Dm755 "${srcdir}/ewfts.py" "${pkgdir}/usr/share/ewfts/ewfts.py"
+
+    # 2. Install the man page to the standard manual directory
+    install -Dm644 "${srcdir}/ewfts.1" "${pkgdir}/usr/share/man/man1/ewfts.1"
+
+    # 3. Install the shim as the primary binary in /usr/bin
+    # This ensures 'ewfts' is available in the user's PATH
+    install -Dm755 "${srcdir}/ewfts" "${pkgdir}/usr/bin/ewfts"
+}
+
