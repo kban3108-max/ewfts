@@ -9,6 +9,7 @@ license=('MIT')
 depends=('python')
 provides=('ewfts')
 conflicts=()
+install="ewfts.install"
 
 # We point to your local staging directory
 source=("ewfts.py"
