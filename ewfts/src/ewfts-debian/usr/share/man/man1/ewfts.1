@@ -1,0 +1,100 @@
+.TH EWFTS 1 "2026-05-06" "2.0" "EWFTS Manual"
+.br
+.SH NAME
+ewfts \- Ephemeral Wrapper for Temporary Scripts (Interactive Linear Mode)
+.br
+.SH SYNOPSIS
+ewfts [run] <command> [args...]
+.br
+.SH DESCRIPTION
+EWFTS executes an arbitrary command without modifying its arguments, then
+.br
+provides an interactive interface to select filesystem targets (files or
+.br
+directories) discovered within the provided arguments.
+.br
+After the command finishes execution, EWFTS performs a cleanup phase where
+.br
+the user-selected file or directory is deleted automatically.
+.br
+Unlike positional wrappers, EWFTS v2 uses linear argument scanning and
+.br
+interactive disambiguation rather than assuming a fixed file position.
+.br
+.SH MODES
+.br
+.TP
+run
+.br
+Executes the command and enables interactive cleanup selection.
+.br
+If no mode is provided, EWFTS defaults to informational output.
+.br
+.SH FILE AND DIRECTORY DETECTION
+.br
+EWFTS scans all command-line arguments and collects any entries that exist
+.br
+as either files or directories in the filesystem.
+.br
+These are presented to the user as a numbered list:
+.br
+1. example.txt (File)
+.br
+2. project/ (Folder)
+.br
+The user selects one entry by index for cleanup.
+.br
+.SH EXECUTION MODEL
+.br
+EWFTS does NOT modify the command before execution.
+.br
+The original command is executed exactly as provided.
+.br
+.SH CLEANUP MODEL
+.br
+After execution completes:
+.br
+1. EWFTS waits 5 seconds (interruptible via CTRL+C)
+.br
+2. The user-selected target is deleted:
+.br
+- Files are removed using standard file deletion
+.br
+- Directories are removed recursively
+.br
+.SH EXAMPLES
+.br
+ewfts run cat file.txt
+.br
+ewfts run ls project/
+.br
+ewfts run python3 script.py input.txt output.txt
+.br
+.SH INTERACTIVE FLOW
+.br
+1. Command is executed normally
+.br
+2. EWFTS scans arguments for filesystem objects
+.br
+3. User is prompted to select a cleanup target
+.br
+4. Execution completes
+.br
+5. Selected file or folder is deleted
+.br
+.SH EXIT STATUS
+.br
+0   Success
+.br
+1   Error (invalid input, non-integer selection, out-of-range selection,
+.br
+or execution failure)
+.br
+.SH SEE ALSO
+.br
+shutil(3), os(3), subprocess(3), python3(1)
+.br
+.SH AUTHOR
+.br
+kban3108-max <https://github.com/kban3108-max>
+.br
