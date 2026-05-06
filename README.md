@@ -2,7 +2,7 @@ EWFTS - Ephemeral Wrapper For Temporary Scripts
 
 EWFTS is a simple Python tool that runs a command and deletes a specified file after execution, with a short cancellation window.
 
-For more details, see the man page: "Here" (src/ewfts-arch/ewfts.1)
+For more details, see the man page: [Here](src/ewfts-arch/ewfts.1)
 
 Examples
 
@@ -39,4 +39,4 @@ Ships as:
 
 License
 
-"License" (LICENSE)
+[License](LICENSE)
