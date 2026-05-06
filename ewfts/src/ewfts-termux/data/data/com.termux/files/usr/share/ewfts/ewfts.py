@@ -8,7 +8,7 @@ scr = os.path.abspath(__file__)
 cur_dir = os.getcwd()
 
 if len(sys.argv) == 1:
-    print("EWFTS v1.0\n    for more info run 'man ewfts'")
+    print("EWFTS v2.0\n    for more info run 'man ewfts'")
     sys.exit(0)
 
 if len(sys.argv) > 1:
