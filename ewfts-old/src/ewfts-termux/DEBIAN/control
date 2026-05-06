@@ -1,0 +1,11 @@
+Package: ewfts
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: kban3108-max <https://github.com/kban3108-max>
+Depends: python3
+Description: Ephemeral Wrapper for Temporary Scripts
+ EWFTS executes a command with an associated file and removes the file
+ after execution completes. It is designed for temporary workflows where
+ input files should not persist after use.

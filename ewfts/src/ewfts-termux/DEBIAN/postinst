@@ -1,0 +1,11 @@
+#!/data/data/com.termux/files/usr/bin/sh
+set -e
+
+# Update man database so ewfts(1) is immediately available
+if command -v mandb >/dev/null 2>&1; then
+    mandb >/dev/null 2>&1 || true
+elif command -v makewhatis >/dev/null 2>&1; then
+    makewhatis /usr/share/man >/dev/null 2>&1 || true
+fi
+
+exit 0
