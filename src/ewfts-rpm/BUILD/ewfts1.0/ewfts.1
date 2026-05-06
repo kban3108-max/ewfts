@@ -1,0 +1,43 @@
+.TH EWFTS 1 "2026-05-04" "1.0" "EWFTS Manual"
+
+.SH NAME
+ewfts \- Ephemeral Wrapper for Temporary Scripts
+.br
+.SH SYNOPSIS
+ewfts [-file <path>] <command> [args...]
+.br
+.SH DESCRIPTION
+EWFTS executes a command and associates it with a single file that is
+treated as temporary. After execution completes, the selected file is
+automatically deleted.
+.br
+.SH FILE HANDLING MODEL
+EWFTS selects a file using the following rules:
+.br
+1. If -file <path> is provided, that file is used.
+.br
+2. Otherwise, the last positional argument is treated as the file.
+.br
+Before execution, EWFTS rewrites the command so that the file is always
+.br
+passed as the final argument to the executed process.
+.br
+The file is deleted after execution completes.
+.br
+.SH EXAMPLES
+ewfts cat file.txt
+.br
+ewfts -file file.txt cat
+.br
+ewfts echo hello world file.txt
+.br
+.SH EXIT STATUS
+0   Success
+.br
+1   Error (invalid arguments, missing file, or execution failure)
+.br
+.SH SEE ALSO
+bash(1), python3(1)
+.br
+.SH AUTHOR
+Me
