@@ -3,7 +3,7 @@ Version: 1.0
 Section: utils
 Priority: optional
 Architecture: all
-Maintainer: me
+Maintainer: kban3108-max <https://codeberg.org/kban3108-max/ewfts>
 Depends: python3
 Description: Ephemeral Wrapper for Temporary Scripts
  EWFTS executes a command with an associated file and removes the file
