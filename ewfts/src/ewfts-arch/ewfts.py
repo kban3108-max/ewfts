@@ -8,19 +8,20 @@ scr = os.path.abspath(__file__)
 cur_dir = os.getcwd()
 
 if len(sys.argv) == 1:
-    print("EWFTS v2.0\n    for more info run 'man ewfts'")
+    print("EWFTS v2.0")
     sys.exit(0)
 
 if len(sys.argv) > 1:
-    target = sys.argv[1:]
+    target = " ".join(sys.argv[1:])
+    target = target.split()
     selected = None
     n = 1
     files = []
-    
+
     for i in range(len(target)):
         if os.path.isfile(target[i]) or os.path.isdir(target[i]):
             files.append(target[i])
-            
+
     for i, val in enumerate(files):
         if os.path.isfile(files[i]):
             print(f"{n}. {val} (File)")
@@ -33,20 +34,20 @@ if len(sys.argv) > 1:
     if choice == "exit":
         print("Exiting...")
         sys.exit(0)
-        
+
     try:
         choice = int(choice)
     except (ValueError, TypeError):
         print("not int!")
         sys.exit(1)
-        
+
     if 1 <= choice <= len(files):
         selected = files[choice - 1]
     else:
         print("Out of range.")
         sys.exit(1)
 
-    process = subprocess.Popen(selected, shell=True)
+    process = subprocess.Popen(" ".join(target), shell=True)
     process.wait()
 
     print("Finished. Cleaning up in 5 seconds... (CTRL+C to cancel)")

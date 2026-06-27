@@ -1,42 +1,28 @@
-EWFTS - Ephemeral Wrapper For Temporary Scripts
+# EWFTS - Ephemeral Wrapper For Temporary Scripts
 
-EWFTS is a simple Python tool that runs a command and deletes a specified file after execution, with a short cancellation window.
+EWFTS is a simple Python tool that processes a command, detects file references in the current directory, lets the user choose one interactively, then executes the reconstructed command via the system shell.
+
+After execution, it deletes the selected file after a short cancellation window.
 
 For more details, see the man page: [Here](ewfts/src/ewfts-arch/ewfts.1)
 
-Examples
+# Examples
 
-Universal (Python script)
+ewfts "cat file.txt > newfile.txt"
 
-ewfts run -file hi.txt cat
+- You get a list of files structured like this:
+    1. file.txt
+    2. newfile.txt
+- it scans the current directory for files found in the input command
+- user selects which file to act on
+- runs the reconstructed shell command
+- then deletes the selected file (with a 5 second cancellation window)
 
-Packaged (installed)
+# Behaviour
 
-ewfts -file hi.txt cat
+- if your command is not in a string (for example: `ewfts cat hi.txt > newhi.txt`), then the shell intercepts operators (e.g. `>`, `*`, `$`) and executes them before EWFTS runs
+- to fix this, wrap your command in a string (for example: `ewfts "cat hi.txt > newhi.txt"`), so EWFTS receives the full input correctly
 
-In both cases:
-
-- "hi.txt" is automatically moved to the end of the command
-- The command is executed ("cat hi.txt")
-- A 5-second timer starts
-- You can press "Ctrl+C" to cancel deletion
-- Otherwise, "hi.txt" is deleted
-
-Use Cases
-
-- Temporary files
-- One-time scripts
-- Disposable automation
-
-Availability
-
-Ships as:
-
-- .deb
-- .deb (Termux)
-- .rpm
-- .pkg.tar.xz
-
-License
+# License
 
 [License](LICENSE)

@@ -12,7 +12,8 @@ if len(sys.argv) == 1:
     sys.exit(0)
 
 if len(sys.argv) > 1:
-    target = sys.argv[1:]
+    target = " ".join(sys.argv[1:])
+    target = target.split()
     selected = None
     n = 1
     files = []
@@ -46,7 +47,7 @@ if len(sys.argv) > 1:
         print("Out of range.")
         sys.exit(1)
 
-    process = subprocess.Popen(selected, shell=True)
+    process = subprocess.Popen(" ".join(target), shell=True)
     process.wait()
 
     print("Finished. Cleaning up in 5 seconds... (CTRL+C to cancel)")
