@@ -17,12 +17,15 @@ elif [ "$1" = "termux" ]; then
     dpkg-deb --build ../ewfts-termux ../../packages/termux/ewfts-termux.deb
 elif [ "$1" = "arch" ]; then
     (cd ../ewfts-arch && makepkg -fAc --nodeps && mv *.pkg.tar.* ../../packages/arch/)
+elif [ "$1" = "wheel" ]; then
+    python -m build ../ewfts-wheel --wheel --outdir ../../packages/wheel
 elif [ "$1" = "all" ]; then
     "$0" deb
     "$0" termux
     "$0" arch
     "$0" rpm
+    "$0" wheel
 else
-    echo "Usage: $0 deb|rpm|termux|arch|all"
+    echo "Usage: $0 deb|rpm|termux|arch|wheel|all"
     exit 1
 fi
