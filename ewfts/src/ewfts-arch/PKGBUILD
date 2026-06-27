@@ -1,6 +1,6 @@
 # Maintainer: kban3108-max <https://github.com/kban3108-max>
 pkgname=ewfts
-pkgver=1.0
+pkgver=2.0
 pkgrel=1
 pkgdesc="Ephemeral Wrapper For Temporary Scripts"
 arch=('any')
