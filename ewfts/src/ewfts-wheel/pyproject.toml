@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ewfts"
+version = "2.0.0"
+description = "EWFTS (Wheel)"
+requires-python = ">=3.8"
+authors = [
+  { name = "kban3108-max <https://codeberg.org/kban3108-max>" }
+]
+license = "MIT"
+
+[project.scripts]
+ewfts = "ewfts.ewfts:main"
