@@ -28,12 +28,7 @@ namespace ewfts {
 			std::cout << "Path Doesn't Exist" << std::endl;
 			return;
 		}
-		try {
-			fs::remove_all(dir);
-		}
-		catch (const fs::filesystem_error& e) {
-			std::cout << "FS Error: " << e.what() << std::endl;
-		}
+		fs::remove_all(dir);
 	}
 	std::vector<std::string> parse(int arg, char* args[]) {
 		std::string one;
