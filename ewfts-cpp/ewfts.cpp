@@ -78,8 +78,13 @@ namespace ewfts {
 int main(int argc, char* argv[]) {
 	std::signal(SIGINT, ewfts::handle);
 	std::vector<std::string> test = ewfts::parse(argc, argv);
-	if (test.size() == 0) {
+	if (argc == 1) {
 		std::cout << "EWFTS v2.0 (C++)" << std::endl;
+		return 0;
+	}
+	if (test.size() == 0) {
+		std::string command = ewfts::cmd(argc, argv);
+		std::system(command.c_str());
 		return 0;
 	}
 	ewfts::list(test);

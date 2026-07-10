@@ -1,5 +1,5 @@
 CXX ?= clang++
-CXXFLAGS ?= 
+CXXFLAGS ?=
 
 ewfts: ewfts.cpp
 	$(CXX) $(CXXFLAGS) ewfts.cpp -o ewfts
