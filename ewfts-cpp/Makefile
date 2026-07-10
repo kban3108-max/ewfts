@@ -1,7 +1,8 @@
 CXX ?= clang++
+CXXFLAGS ?= 
 
 ewfts: ewfts.cpp
-	$(CXX) ewfts.cpp -o ewfts
+	$(CXX) $(CXXFLAGS) ewfts.cpp -o ewfts
 
 clean:
 	rm -f ewfts
