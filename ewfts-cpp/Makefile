@@ -1,7 +1,7 @@
-CC ?= clang++
+CXX ?= clang++
 
 ewfts: ewfts.cpp
-	$(CC) ewfts.cpp -o ewfts
+	$(CXX) ewfts.cpp -o ewfts
 
 clean:
 	rm -f ewfts
