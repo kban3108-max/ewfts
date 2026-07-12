@@ -6,4 +6,4 @@ ewfts: ewfts.cpp
 	$(CXX) $(CXXFLAGS) ewfts.cpp -o $(BNAME)
 
 clean:
-	rm -f ewfts
+	rm -f $(BNAME)
