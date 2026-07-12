@@ -1,10 +1,10 @@
 .TH EWFTS 1 "2026-05-06" "2.0" "EWFTS Manual"
 .br
 .SH NAME
-ewfts \- Ephemeral Wrapper for Temporary Scripts (Interactive Linear Mode)
+ewfts \- Ephemeral Wrapper for Temporary Scripts
 .br
 .SH SYNOPSIS
-ewfts [run] <command> [args...]
+ewfts <command> [args...]
 .br
 .SH DESCRIPTION
 EWFTS executes an arbitrary command without modifying its arguments, then
@@ -20,15 +20,6 @@ the user-selected file or directory is deleted automatically.
 Unlike positional wrappers, EWFTS v2 uses linear argument scanning and
 .br
 interactive disambiguation rather than assuming a fixed file position.
-.br
-.SH MODES
-.br
-.TP
-run
-.br
-Executes the command and enables interactive cleanup selection.
-.br
-If no mode is provided, EWFTS defaults to informational output.
 .br
 .SH FILE AND DIRECTORY DETECTION
 .br
@@ -64,11 +55,11 @@ After execution completes:
 .br
 .SH EXAMPLES
 .br
-ewfts run cat file.txt
+ewfts cat file.txt
 .br
-ewfts run ls project/
+ewfts ls project/
 .br
-ewfts run python3 script.py input.txt output.txt
+ewfts python3 script.py input.txt output.txt
 .br
 .SH INTERACTIVE FLOW
 .br
@@ -89,6 +80,8 @@ ewfts run python3 script.py input.txt output.txt
 1   Error (invalid input, non-integer selection, out-of-range selection,
 .br
 or execution failure)
+.br
+also C++ version exists lol
 .br
 .SH SEE ALSO
 .br

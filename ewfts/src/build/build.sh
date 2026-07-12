@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
-mkdir -p ../../packages/{deb,rpm,termux,arch}
+mkdir -p ../../packages/{deb,rpm,termux,arch,wheel}
+chmod 755 ../ewfts-debian/* ../ewfts-debian/DEBIAN/*
+chmod 755 ../ewfts-termux/* ../ewfts-termux/DEBIAN/*
+chmod 755 ../ewfts-rpm/SOURCES/*
+chmod 755 ../ewfts-arch/*
 
 if [ "$1" = "rpm" ]; then
     TOPDIR=$(realpath ../ewfts-rpm)
@@ -19,6 +23,7 @@ elif [ "$1" = "arch" ]; then
     (cd ../ewfts-arch && makepkg -fAc --nodeps && mv *.pkg.tar.* ../../packages/arch/)
 elif [ "$1" = "wheel" ]; then
     python -m build ../ewfts-wheel --wheel --outdir ../../packages/wheel
+    rm -rf ../ewfts-wheel/ewfts.egg-info ../ewfts-wheel/build
 elif [ "$1" = "all" ]; then
     "$0" deb
     "$0" termux
