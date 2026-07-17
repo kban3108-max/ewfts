@@ -3,7 +3,7 @@
 printf "Install EWFTS? [y/N]: "
 read answer
 
-if [ "$answer" = "y" ]; then
+if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
     make || exit 1
     mkdir -p "$HOME/.local/bin"
     mkdir -p "$HOME/.local/share/man/man1"
