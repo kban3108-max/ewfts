@@ -93,6 +93,10 @@ int main(int argc, char* argv[]) {
 	std::getline(std::cin, answer);
 	if (answer == "exit") {
 		return 0;
+	} else if (answer == "none") {
+		std::string command = ewfts::cmd(argc, argv);
+		std::system(command.c_str());
+		return 0;
 	}
 	int choice;
 	try {
