@@ -8,6 +8,9 @@
 #include <csignal>
 #include <atomic>
 #include <sstream>
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 namespace fs = std::filesystem;
 std::atomic<bool> ctrlc_pressed(false);
@@ -76,6 +79,9 @@ namespace ewfts {
 }
 
 int main(int argc, char* argv[]) {
+	#ifdef _WIN32
+		SetConsoleOutputCP(CP_UTF8);
+	#endif
 	std::signal(SIGINT, ewfts::handle);
 	std::vector<std::string> test = ewfts::parse(argc, argv);
 	if (argc == 1) {
