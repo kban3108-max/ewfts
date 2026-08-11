@@ -1,4 +1,4 @@
-![EWFTS logo](assets/ewfts-logo.png)
+![EWFTS logo](logo.jpg)
 # EWFTS - Ephemeral Wrapper For Temporary Scripts
 
 EWFTS is a simple Python tool that processes a command, detects file references in the current directory, lets the user choose one interactively, then executes the reconstructed command via the system shell.
