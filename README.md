@@ -36,9 +36,11 @@ cd ewfts/ewfts-cpp/bin
 2. Python
 bash ```
 git clone https://codeberg.org/kban3108-max/ewfts
-cd ewfts/ewfts/packages/unuversal
-pythin3 ewfts.py
+cd ewfts/ewfts/packages/universal
+python3 ewfts.py
 ```
+
+if you want to run it directly then add it to your PATH (or on windows your PATH)
 
 # License
 
