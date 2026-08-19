@@ -28,13 +28,13 @@ ewfts "cat file.txt > newfile.txt"
 
 1. C++
 
-bash ```
+```bash
 git clone https://codeberg.org/kban3108-max/ewfts
 cd ewfts/ewfts-cpp/bin
 ./ewfts.com # or .mac for MacOS
 ```
 2. Python
-bash ```
+```bash
 git clone https://codeberg.org/kban3108-max/ewfts
 cd ewfts/ewfts/packages/universal
 python3 ewfts.py
