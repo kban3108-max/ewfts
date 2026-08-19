@@ -24,6 +24,22 @@ ewfts "cat file.txt > newfile.txt"
 - if your command is not in a string (for example: `ewfts cat hi.txt > newhi.txt`), then the shell intercepts operators (e.g. `>`, `*`, `$`) and executes them before EWFTS runs
 - to fix this, wrap your command in a string (for example: `ewfts "cat hi.txt > newhi.txt"`), so EWFTS receives the full input correctly
 
+# How To Use
+
+1. C++
+
+bash ```
+git clone https://codeberg.org/kban3108-max/ewfts
+cd ewfts/ewfts-cpp/bin
+./ewfts.com # or .mac for MacOS
+```
+2. Python
+bash ```
+git clone https://codeberg.org/kban3108-max/ewfts
+cd ewfts/ewfts/packages/unuversal
+pythin3 ewfts.py
+```
+
 # License
 
 [License](LICENSE)
