@@ -10,7 +10,7 @@ requires-python = ">=3.8"
 authors = [
   { name = "kban3108-max <https://codeberg.org/kban3108-max>" }
 ]
-license = "0BSD"
+license = "BSD-3-Clause"
 
 [project.scripts]
 ewfts = "ewfts.ewfts:main"
