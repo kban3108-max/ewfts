@@ -44,4 +44,6 @@ if you want to run it directly then add it to your PATH (or on windows your PATH
 
 # License
 
+This program is under MPL-2.0
+
 [License](LICENSE)
