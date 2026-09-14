@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Ephemeral Wrapper for Temporary Scripts
 Packager:       kban3108-max <https://codeberg.com/kban3108-max>
 
-License:        MIT
+License:        MPL-2.0
 Source0:        %{name}-%{version}.tar.gz
 
 BuildArch:      noarch
