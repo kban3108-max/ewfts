@@ -138,7 +138,7 @@ int main(int argc, char* argv[]) {
 	std::string command = ewfts::cmd(argc, argv);
 	std::system(command.c_str());
 	std::cout << "Finished. Cleaning up in 5 seconds... (CTRL+C to cancel)" << std::endl;
-	for (int i = 0; i < 5 && !ctrlc_pressed; ++i) ewfts::sleep(1000);
+	for (int i = 0; i < 50 && !ctrlc_pressed; ++i) ewfts::sleep(100);
 	if (ctrlc_pressed) {
 		std::cout << "Cleanup cancelled. Target retained.\n";
 		return 0;
