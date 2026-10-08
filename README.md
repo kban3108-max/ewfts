@@ -50,4 +50,4 @@ version 2 only, as published by the Free Software Foundation.
 
 Copyright (C) 2026 kban3108-max
 
-[License](LICENSE)
+[LICENSE](LICENSE)
