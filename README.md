@@ -42,8 +42,12 @@ python3 ewfts.py
 
 if you want to run it directly then add it to your PATH (or on windows your PATH)
 
-# License
+# LICENSE
 
-This program is under MPL-2.0
+ewfts is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License,
+version 2 only, as published by the Free Software Foundation.
+
+Copyright (C) 2026 kban3108-max
 
 [License](LICENSE)

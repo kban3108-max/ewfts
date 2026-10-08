@@ -23,6 +23,6 @@ elif [ "$1" = "all" ]; then
     "$0" arch
     "$0" rpm
 else
-    echo "Usage: $0 deb|rpm|termux|arch"
+    echo "Usage: $0 deb|rpm|termux|arch|all"
     exit 1
 fi
