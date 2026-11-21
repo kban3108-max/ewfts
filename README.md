@@ -37,7 +37,7 @@ cd ewfts/ewfts-cpp/bin
 ```bash
 git clone https://codeberg.org/kban3108-max/ewfts
 cd ewfts/ewfts-cpp
-sudo make install # make install on termux/nonroot systems
+./installer.sh
 ewfts
 ```
 3. Python
@@ -68,9 +68,10 @@ version 2 only, as published by the Free Software Foundation.
 Copyright (C) 2026 kban3108-max
 
 Credits:
-| Library           | License   | Repository                              |
-| :----------------- | :-------: | :------------------------------------: |
-| PTerm             |   MIT     | https://github.com/pterm/pterm          |
-| atomicgo-keyboard |   MIT     | https://github.com/atomicgo/keyboard    |
+| Library            | License      | Repository                              |
+| :----------------- | :---------: | :--------------------------------------: |
+| PTerm              |      MIT     | https://github.com/pterm/pterm          |
+| atomicgo-keyboard  |      MIT     | https://github.com/atomicgo/keyboard    |
+| shlex              |  Apache-2.0  | https://github.com/google/shlex         |
 
 [LICENSE](LICENSE)
