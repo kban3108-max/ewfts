@@ -67,4 +67,10 @@ version 2 only, as published by the Free Software Foundation.
 
 Copyright (C) 2026 kban3108-max
 
+Credits:
+| Library           | License   | Repository                              |
+| :----------------- | :-------: | :------------------------------------: |
+| PTerm             |   MIT     | https://github.com/pterm/pterm          |
+| atomicgo-keyboard |   MIT     | https://github.com/atomicgo/keyboard    |
+
 [LICENSE](LICENSE)
