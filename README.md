@@ -51,7 +51,7 @@ python3 ewfts.py
 ```bash
 git clone https://codeberg.org/kban3108-max/ewfts
 cd ewfts/ewfts-cpp
-sudo make install # make install on termux/nonroot systems
+./installer.sh
 cd ../ewfts-tui
 go install . # installs it into $GOBIN (by default $GOPATH/bin), make sure $GOBIN is in your system PATH
 ewfts-tui
