@@ -4,6 +4,7 @@ go 1.27.1
 
 require (
 	atomicgo.dev/keyboard v0.2.10
+	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/pterm/pterm v0.12.84
 )
 
@@ -12,7 +13,6 @@ require (
 	atomicgo.dev/schedule v0.1.0 // indirect
 	github.com/clipperhouse/uax29/v2 v2.7.0 // indirect
 	github.com/containerd/console v1.0.5 // indirect
-	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
 	github.com/lithammer/fuzzysearch v1.1.8 // indirect
 	github.com/mattn/go-runewidth v0.0.24 // indirect
 	golang.org/x/sys v0.44.0 // indirect
