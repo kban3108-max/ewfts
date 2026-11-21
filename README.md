@@ -1,7 +1,7 @@
 ![EWFTS logo](logo.jpg)
 # EWFTS - Ephemeral Wrapper For Temporary Scripts
 
-EWFTS is a simple Python tool that processes a command, detects file references in the current directory, lets the user choose one interactively, then executes the reconstructed command via the system shell.
+EWFTS is a simple Python/C++ tool (with Go TUI btw) that processes a command, detects file references in the current directory, lets the user choose one interactively, then executes the reconstructed command via the system shell.
 
 After execution, it deletes the selected file after a short cancellation window.
 
@@ -33,14 +33,31 @@ git clone https://codeberg.org/kban3108-max/ewfts
 cd ewfts/ewfts-cpp/bin
 ./ewfts.com # or .mac for MacOS
 ```
-2. Python
+2. C++ (Compiled)
+```bash
+git clone https://codeberg.org/kban3108-max/ewfts
+cd ewfts/ewfts-cpp
+sudo make install # make install on termux/nonroot systems
+ewfts
+```
+3. Python
+
 ```bash
 git clone https://codeberg.org/kban3108-max/ewfts
 cd ewfts/ewfts/packages/universal
 python3 ewfts.py
 ```
+4. Go (TUI)
+```bash
+git clone https://codeberg.org/kban3108-max/ewfts
+cd ewfts/ewfts-cpp
+sudo make install # make install on termux/nonroot systems
+cd ../ewfts-tui
+go install . # installs it into $GOBIN (by default $GOPATH/bin), make sure $GOBIN is in your system PATH
+ewfts-tui
+```
 
-if you want to run it directly then add it to your PATH (or on windows your PATH)
+if you want to run it directly then add it to your PATH (or on windows your PATH) (or if you ran sudo make install/go install . then just run it normally)
 
 # LICENSE
 
